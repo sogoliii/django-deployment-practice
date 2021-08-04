@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% block head %}
+    <title>Base Page</title>
+    {% endblock %}
+    <!-- bootstap -->
+    <link rel="stylesheet" href="{% static "/css/bootstrap/bootstrap.min.css" %}">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">HOME</a>
+        <a class="nav-link" href="{% url 'admin:index' %}">ADMIN</a>
+        <a class="nav-link" href="{% url 'formPage:register' %}">REGISTERATION</a>
+        {% if user.is_authenticated %}
+          <a class="nav-link" href="{% url 'user_logout' %}">LOGOUT</a>
+        {% else %}
+          <a class="nav-link" href="{% url 'formPage:user_login' %}">LOGIN</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="baseblock">
+  {% block body_block %}
+  <p>this is in base page!</p>
+  {% endblock %}
+
+</div>
+
+    <!-- bootstap and jQuery -->
+    <script src="{% static 'js/jQuery.js'%}" charset="utf-8"></script>
+    <script src="{% static 'js/jquery-ui.min.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap/bootstrap.min.js'%}"></script>
+
+  </body>
+</html>

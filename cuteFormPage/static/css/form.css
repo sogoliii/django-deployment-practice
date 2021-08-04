@@ -1,0 +1,32 @@
+body{
+  background: black !important;
+}
+.formContainer{
+  background: black;
+  color: white;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 30% !important;
+  margin-top: 100px;
+  border-radius: 25px;
+  border: 2px solid white;
+}
+
+.signup_form label{
+  display: block;
+  padding-bottom:12px;
+}
+
+.signup_form p input{
+  border-radius: 7px;
+}
+
+.signup_form .signupBtn{
+  margin-top: 20px;
+    border-radius: 7px;
+    padding: 0px 15px;
+    background: black;
+    color: white;
+    border-color: white;
+}

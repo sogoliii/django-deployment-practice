@@ -1,0 +1,20 @@
+/* index page css */
+.tagHolder {
+  margin-top:100px;
+  text-align: center;
+}
+
+.tagHolder a{
+  border: 2px black solid;
+  border-radius: 7px;
+  padding:5px 20px;
+  color:black;
+  text-decoration: none;
+  text-align: center;
+  margin:auto;
+}
+
+.tagHolder a:hover{
+  background-color: black;
+  color: white;
+}

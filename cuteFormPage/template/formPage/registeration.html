@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'formPage/base.html' %}
+{% load static %}
+{% block head %}
+<title> Register Page </title>
+<link rel="stylesheet" href="{% static "/css/register.css" %}">
+{% endblock %}
+{% block body_block %}
+  {% if registered %}
+    <h1 class="thanx">Thank you for registering!</h1>
+  {% else %}
+    <div class="container formContainer">
+      <h1>Register here!</h1>
+      <h3>Fill out the form!</h3>
+      <form class="registerForm" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+        <input type="submit" name="registerbtn" value="Register">
+      </form>
+    </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "formPage/base.html" %}
+{% load static %}
+{% block head %}
+<title> SignUp </title>
+<link rel="stylesheet" href="{% static "/css/form.css" %}">
+{% endblock %}
+{% block body_block %}
+<div class="formContainer container">
+  <form class="signup_form"  method="POST">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input class="signupBtn" type="submit" name="signupsubmit" value="Sign Up!">
+  </form>
+</div>
+
+{% endblock %}

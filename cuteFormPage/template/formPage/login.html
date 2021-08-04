@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'formPage/base.html' %}
+{% load static %}
+{% block head %}
+<title>Login Page</title>
+{% endblock %}
+
+{% block body_block %}
+<div class="jumbtron">
+  <form action="{% url 'formPage:user_login' %}" method="POST">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" placeholder="Please enter your username">
+    <label for="password">Password</label>
+    <input type="password" name="password">
+
+    <input type="submit" name="" value="Login">
+
+  </form>
+</div>
+{% endblock %}

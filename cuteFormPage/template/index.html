@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'formPage/base.html' %}
+{% load static %}
+{% block head %}
+<title> Home Page </title>
+<link rel="stylesheet" href="{% static "/css/index.css" %}">
+{% endblock %}
+{% block body_block %}
+<div class="tagHolder container">
+  <a href="{% url 'formPage:signuppage' %}" target="_blank">Sign Up Form</a>
+</div>
+{% endblock %}
